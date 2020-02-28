@@ -30,6 +30,7 @@ for i in range(1, len(names_2)):
         duplicates.append(names_2[i])
 
 
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
@@ -38,3 +39,5 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+# one of the ways is to not add it to the binarysearchtree but just add the duplicates in the list.

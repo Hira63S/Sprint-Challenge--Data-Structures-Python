@@ -41,14 +41,13 @@ class LinkedList:
       current = current.get_next()
     # if we've gotten here, then the target node isn't in our list
     return False
-
   def reverse_list(self):
-      # set the pointer
-      current = self.head
-      prev = None
-      while current is not None:
-          next = current.get_next()
-          current.set_next(prev)
-          prev = current
-          current = next
-      self.head = prev
+        # find the current, so let's set the current to the head:
+    current = self.head
+    prev = None
+    while current is not None:
+        next_val = current.get_next()
+        current.set_next(prev)           # since we are reversing, we set the current value to prev
+        prev = current                   # we make it the current and if it is not none
+        current = next_val               # we get the next value kind of like recursion
+    self.head = prev

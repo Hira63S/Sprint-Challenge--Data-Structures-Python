@@ -33,16 +33,18 @@ class RingBuffer:
         first = self.current
         # we append that value
         list_buffer_contents.append(first.value)
+        # if there is a value next to the first
         if first.next:
             next_one = first.next
         else:
             next_one = self.storage.head
+        # keep adding the items while the next_one is not equal to first
         while next_one != first:
             list_buffer_contents.append(next_one.value)
-            if next_one.next:
+            if next_one.next:                # set the next_one
                 next_one = next_one.next
             else:
-                next_one = self.storage.head
+                next_one = self.storage.head    # at the end, we go to head
         return list_buffer_contents
 
 
